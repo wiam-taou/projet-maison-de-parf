@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maison du Parfum - Catalogue</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+<header class="main-header">
+    <div class="logo">
+        <img src="images/site/logo.png" alt="Maison du Parfum">
+    </div>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="catalogue.html" class="active">Catalogue</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="cart" onclick="toggleCart()">
+        🛒 <span id="cart-count">0</span>
+    </div>
+</header>
+
+<section id="page-title" class="fadein">
+    <h1>Catalogue</h1>
+    <p>Explorez nos collections parfumées.</p>
+</section>
+
+<nav class="sub-nav fadein">
+    <button data-target="originaux" class="active">Originaux</button>
+    <button data-target="dupes">Dupes</button>
+    <button data-target="decants">Decants</button>
+</nav>
+
+<!-- ORIGINAUX -->
+<section id="originaux" class="grid fadein">
+    <h2>Parfums Originaux</h2>
+
+    <div class="product">
+        <div class="img">
+            <img src="images/produits/aura-signature.jpg" alt="Aura Signature">
+        </div>
+        <h3>Aura Signature</h3>
+        <span class="notes">Fruité • Floral • Musqué</span>
+        <p class="price">89€</p>
+        <button onclick="addToCart('Aura Signature', 89)">Ajouter au panier</button>
+    </div>
+
+    <div class="product">
+        <div class="img">
+            <img src="images/produits/nuit-eternelle.jpg" alt="Nuit Éternelle">
+        </div>
+        <h3>Nuit Éternelle</h3>
+        <span class="notes">Ambre • Vanille • Oud</span>
+        <p class="price">99€</p>
+        <button onclick="addToCart('Nuit Éternelle', 99)">Ajouter au panier</button>
+    </div>
+</section>
+
+<!-- DUPES -->
+<section id="dupes" class="grid fadein hidden">
+    <h2>Dupes</h2>
+
+    <div class="product">
+        <div class="img">
+            <img src="images/produits/velours-54.jpg" alt="Velours 54">
+        </div>
+        <h3>Velours 54</h3>
+        <span class="notes">Inspiré de La Vie Est Belle</span>
+        <p class="price">29€</p>
+        <button onclick="addToCart('Velours 54', 29)">Ajouter au panier</button>
+    </div>
+
+    <div class="product">
+        <div class="img">
+            <img src="images/produits/eclat-blanc.jpg" alt="Éclat Blanc">
+        </div>
+        <h3>Eclat Blanc</h3>
+        <span class="notes">Inspiré de J’adore</span>
+        <p class="price">34€</p>
+        <button onclick="addToCart('Eclat Blanc', 34)">Ajouter au panier</button>
+    </div>
+</section>
+
+<!-- DECANTS -->
+<section id="decants" class="grid fadein hidden">
+    <h2>Decants</h2>
+
+    <div class="product">
+        <div class="img">
+            <img src="images/produits/explorer-5ml.jpg" alt="Explorer 5ml">
+        </div>
+        <h3>Explorer - 5ml</h3>
+        <span class="notes">Boisé • Épicé</span>
+        <p class="price">9€</p>
+        <button onclick="addToCart('Explorer - 5ml', 9)">Ajouter au panier</button>
+    </div>
+
+    <div class="product">
+        <div class="img">
+            <img src="images/produits/velvet-rose-10ml.jpg" alt="Velvet Rose 10ml">
+        </div>
+        <h3>Velvet Rose - 10ml</h3>
+        <span class="notes">Floral • Sucré</span>
+        <p class="price">12€</p>
+        <button onclick="addToCart('Velvet Rose - 10ml', 12)">Ajouter au panier</button>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 Maison du Parfum — Tous droits réservés</p>
+</footer>
+
+<!-- PANIER -->
+<div id="cart-modal" class="cart-modal">
+    <h3>Mon panier</h3>
+    <ul id="cart-items"></ul>
+    <p><strong>Total :</strong> <span id="cart-total">0</span> €</p>
+    <button onclick="checkout()">Commander</button>
+    <button onclick="toggleCart()">Fermer</button>
+</div>
+
+<div id="cart-overlay" class="cart-overlay" onclick="closeCart()"></div>
+
+</body>
+</html>
