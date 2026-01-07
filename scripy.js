@@ -6,7 +6,7 @@ const observer = new IntersectionObserver(entries => {
 });
 document.querySelectorAll(".fadein").forEach(el => observer.observe(el));
 
-// ================= NAV CATALOGUE =================
+// ================= NAV CATALOGUE =================Pages
 const buttons = document.querySelectorAll(".sub-nav button");
 const sections = {
     originaux: document.getElementById("originaux"),
