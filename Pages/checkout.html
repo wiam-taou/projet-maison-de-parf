@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finaliser la commande - Maison du Parfum</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Maison du Parfum</h1>
+</header>
+
+<main class="checkout-main">
+    <h2>Informations de livraison</h2>
+    <p class="note">Veuillez remplir vos informations pour finaliser la commande</p>
+
+    <form id="checkout-form">
+        <input type="text" id="nom" placeholder="Nom" required>
+        <input type="text" id="prenom" placeholder="Prénom" required>
+        <input type="text" id="ville" placeholder="Ville" required>
+        <input type="tel" id="tel" placeholder="Téléphone" required>
+        <button type="submit">Valider la commande</button>
+    </form>
+</main>
+
+<script>
+document.getElementById("checkout-form").addEventListener("submit", function(e) {
+    e.preventDefault(); // Empêche le rechargement de page
+
+    // Récupération des infos du formulaire
+    const client = {
+        nom: document.getElementById("nom").value,
+        prenom: document.getElementById("prenom").value,
+        ville: document.getElementById("ville").value,
+        tel: document.getElementById("tel").value
+    };
+
+    // Stockage dans localStorage
+    localStorage.setItem("client", JSON.stringify(client));
+    localStorage.setItem("orderConfirmed", "true");
+
+    // Redirection vers la page merci
+    window.location.href = "thankyou.html";
+});
+</script>
+
+</body>
+</html>
+
